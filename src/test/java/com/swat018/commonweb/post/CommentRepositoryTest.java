@@ -19,13 +19,29 @@ public class CommentRepositoryTest {
     @Autowired
     CommentRepository comments;
 
+    @Autowired
+    PostRepository posts;
+
     @Test
     public void getComment() {
-        comments.getById(1l);
-
+/*        comments.getById(1l);
         System.out.println("============================");
+        comments.findById(1l);*/
+        Post post = new Post();
+        post.setTitle("jpa");
+        Post savedPost = posts.save(post);
 
-        comments.findById(1l);
+        Comment comment = new Comment();
+        comment.setComment("spring data jpa projecttion");
+        comment.setPost(savedPost);
+        comment.setUp(10);
+        comment.setDown(1);
+        comments.save(comment);
+
+        comments.findByPost_Id(savedPost.getId(), CommentOnly.class).forEach(c -> {
+            System.out.println("=========================");
+            System.out.println(c.getComment());
+        });
     }
 
 }
