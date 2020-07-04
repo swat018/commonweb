@@ -2,13 +2,14 @@ package com.swat018.commonweb.post;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PostRepository extends JpaRepository<Post, Long> {
+public interface PostRepository extends JpaRepository<Post, Long>{
     List<Post> findByTitleStartsWith(String title);
 
     @Query("SELECT p FROM #{#entityName} AS p WHERE p.title = :title")
