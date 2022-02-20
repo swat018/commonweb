@@ -5,3 +5,4 @@
   - 스프링 데이터 Common: Web - Pageable과 Sort 매개변수
   - 스프링 데이터 Common: Web - HATEOAS
   - 스프링 데이터 JPA: JPA Repository
+  - 스프링 데이터 JPA: 엔티티 저장하기 (JpaRepository.save())
