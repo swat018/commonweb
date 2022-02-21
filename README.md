@@ -6,3 +6,4 @@
   - 스프링 데이터 Common: Web - HATEOAS
   - 스프링 데이터 JPA: JPA Repository
   - 스프링 데이터 JPA: JPA 쿼리 메서드
+  - 스프링 데이터 JPA: JPA 쿼리 메서드 Sort
