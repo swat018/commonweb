@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -66,10 +67,10 @@ public class PostRepositoryTest {
         assertThat(all.size()).isEqualTo(1);
     }
 
-    private void savePost() {
+    private Post savePost() {
         Post post = new Post();
         post.setTitle("Spring");
-        postRepository.save(post);
+        return postRepository.save(post);
     }
 
     @Test
@@ -78,6 +79,22 @@ public class PostRepositoryTest {
 //        List<Post> all = postRepository.findByTitle("Spring", Sort.by("title"));
         List<Post> all = postRepository.findByTitle("Spring", JpaSort.unsafe("LENGTH(title)"));
         assertThat(all.size()).isEqualTo(1);
+    }
+
+    @Test
+    public void updateTitle() {
+        Post spring = savePost();
+
+//        String hibernate = "hibernate";
+//        int update = postRepository.updateTitle(hibernate, spring.getId());
+//        assertThat(update).isEqualTo(1);
+//
+//        Optional<Post> byId = postRepository.findById(spring.getId());
+//        assertThat(byId.get().getTitle()).isEqualTo(hibernate);
+
+        spring.setTitle("hibernate");
+        List<Post> all = postRepository.findAll();
+        assertThat(all.get(0).getTitle()).isEqualTo("hibernate");
     }
 
 
