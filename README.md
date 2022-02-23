@@ -8,3 +8,4 @@
   - 스프링 데이터 JPA: JPA 쿼리 메서드
   - 스프링 데이터 JPA: JPA 쿼리 메서드 Sort
   - 스프링 데이터 JPA: Named Parameter와 SpEL
+  - 스프링 데이터 JPA: Update 쿼리
