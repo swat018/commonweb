@@ -10,3 +10,4 @@
   - 스프링 데이터 JPA: Named Parameter와 SpEL
   - 스프링 데이터 JPA: Update 쿼리  
   - 스프링 데이터 JPA: EntityGraph
+  - 스프링 데이터 JPA: Projection
