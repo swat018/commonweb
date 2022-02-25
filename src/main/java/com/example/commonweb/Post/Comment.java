@@ -2,8 +2,8 @@ package com.example.commonweb.Post;
 
 import javax.persistence.*;
 
-//@NamedEntityGraph(name = "Comment.post",
-//        attributeNodes = @NamedAttributeNode("post"))
+@NamedEntityGraph(name = "Comment.post",
+        attributeNodes = @NamedAttributeNode("post"))
 @Entity
 public class Comment {
 
