@@ -12,3 +12,4 @@
   - 스프링 데이터 JPA: EntityGraph
   - 스프링 데이터 JPA: Projection
   - 스프링 데이터 JPA: Specifications
+  - 스프링 데이터 JPA: Query by Example
